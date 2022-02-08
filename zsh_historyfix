@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+cd ~
+
+mv .zsh_history .zsh_history_bad
+
+strings -eS .zsh_history_bad > .zsh_history
+
+fc -R .zsh_history
+
+#delete archived history if user wants to save comment out the following line
+rm ~/.zsh_history_bad
+
+
+#if user doesnt have lolcat you wont see rainbow output
+echo "History fixed!" | lolcat
